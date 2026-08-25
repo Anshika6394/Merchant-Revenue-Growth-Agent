@@ -13,13 +13,11 @@ from app.main import app
 
 engine = build_engine(os.environ["DATABASE_URL"])
 
-
 @pytest.fixture(autouse=True)
 def database():
     Base.metadata.create_all(engine)
     yield
     Base.metadata.drop_all(engine)
-
 
 @pytest.fixture
 def client():
@@ -31,3 +29,9 @@ def client():
     with TestClient(app) as test_client:
         yield test_client
     app.dependency_overrides.clear()
+
+@pytest.fixture
+def db():
+    from sqlalchemy.orm import Session
+    with Session(engine) as session:
+        yield session
