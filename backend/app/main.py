@@ -11,3 +11,6 @@ app.include_router(auth.router, prefix="/api/v1")
 app.include_router(analytics.router, prefix="/api/v1")
 
 app.include_router(evidence.router)
+
+from app.api.routes import strategy
+app.include_router(strategy.router)
