@@ -75,7 +75,7 @@ def payments_metrics(db: Session, recovery_assumption: Decimal = DEFAULT_RECOVER
         "failure_reasons": sums_by(db, Payment.failure_reason, Payment.amount, Payment.status == PaymentStatus.FAILED),
         "payment_method_breakdown": sums_by(db, Payment.payment_method, Payment.amount),
         "repeated_failures": repeated,
-        "retry_eligibility": {"eligible": retry_eligible, "ineligible": total - retry_eligible},
+        "retry_eligibility": {"eligible": retry_eligible, "ineligible": failed - retry_eligible},
         "recoverable_revenue": {
             "eligible_payment_count": eligible_count,
             "eligible_customer_count": eligible_customers,
