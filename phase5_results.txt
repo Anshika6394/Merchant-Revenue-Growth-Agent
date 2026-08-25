@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.1, pytest-9.1.1, pluggy-1.6.0 -- /workspaces/Merchant-Revenue-Growth-Agent/backend/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/Merchant-Revenue-Growth-Agent/backend
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collecting ... collected 46 items
+
+tests/test_phase5_tools.py::test_registry_has_exactly_12_tools PASSED    [  2%]
+tests/test_phase5_tools.py::test_registry_contains_all_tool_names PASSED [  4%]
+tests/test_phase5_tools.py::test_list_tools_returns_12_entries PASSED    [  6%]
+tests/test_phase5_tools.py::test_list_tools_schema_structure PASSED      [  8%]
+tests/test_phase5_tools.py::test_unknown_tool_returns_safe_error PASSED  [ 10%]
+tests/test_phase5_tools.py::test_no_secrets_in_bad_date_error PASSED     [ 13%]
+tests/test_phase5_tools.py::test_no_secrets_in_unknown_tool_error PASSED [ 15%]
+tests/test_phase5_tools.py::test_invalid_date_format_rejected[get_revenue_overview] PASSED [ 17%]
+tests/test_phase5_tools.py::test_invalid_date_format_rejected[get_payment_failures] PASSED [ 19%]
+tests/test_phase5_tools.py::test_invalid_date_format_rejected[get_checkout_metrics] PASSED [ 21%]
+tests/test_phase5_tools.py::test_invalid_date_format_rejected[get_customer_metrics] PASSED [ 23%]
+tests/test_phase5_tools.py::test_invalid_date_format_rejected[get_refund_metrics] PASSED [ 26%]
+tests/test_phase5_tools.py::test_invalid_date_format_rejected[get_product_metrics] PASSED [ 28%]
+tests/test_phase5_tools.py::test_start_after_end_rejected[get_revenue_overview] PASSED [ 30%]
+tests/test_phase5_tools.py::test_start_after_end_rejected[get_payment_failures] PASSED [ 32%]
+tests/test_phase5_tools.py::test_start_after_end_rejected[get_checkout_metrics] PASSED [ 34%]
+tests/test_phase5_tools.py::test_start_after_end_rejected[get_customer_metrics] PASSED [ 36%]
+tests/test_phase5_tools.py::test_start_after_end_rejected[get_refund_metrics] PASSED [ 39%]
+tests/test_phase5_tools.py::test_start_after_end_rejected[get_product_metrics] PASSED [ 41%]
+tests/test_phase5_tools.py::test_compare_periods_invalid_date_rejected PASSED [ 43%]
+tests/test_phase5_tools.py::test_compare_periods_start_after_end_rejected PASSED [ 45%]
+tests/test_phase5_tools.py::test_subscription_risks_invalid_risk_level PASSED [ 47%]
+tests/test_phase5_tools.py::test_opportunities_invalid_category PASSED   [ 50%]
+tests/test_phase5_tools.py::test_payment_failures_limit_out_of_range PASSED [ 52%]
+tests/test_phase5_tools.py::test_payment_failures_negative_offset PASSED [ 54%]
+tests/test_phase5_tools.py::test_winback_candidates_invalid_days PASSED  [ 56%]
+tests/test_phase5_tools.py::test_opportunity_details_missing_id PASSED   [ 58%]
+tests/test_phase5_tools.py::test_opportunity_details_empty_id PASSED     [ 60%]
+tests/test_phase5_tools.py::test_tool_files_do_not_import_db_session PASSED [ 63%]
+tests/test_phase5_tools.py::test_tool_implementations_do_not_import_sqlalchemy_directly PASSED [ 65%]
+tests/test_phase5_tools.py::test_revenue_overview_success PASSED         [ 67%]
+tests/test_phase5_tools.py::test_revenue_overview_with_valid_dates PASSED [ 69%]
+tests/test_phase5_tools.py::test_payment_failures_success PASSED         [ 71%]
+tests/test_phase5_tools.py::test_recoverable_revenue_success PASSED      [ 73%]
+tests/test_phase5_tools.py::test_checkout_metrics_success PASSED         [ 76%]
+tests/test_phase5_tools.py::test_customer_metrics_success PASSED         [ 78%]
+tests/test_phase5_tools.py::test_winback_candidates_success PASSED       [ 80%]
+tests/test_phase5_tools.py::test_subscription_risks_success PASSED       [ 82%]
+tests/test_phase5_tools.py::test_subscription_risks_past_due_filter PASSED [ 84%]
+tests/test_phase5_tools.py::test_refund_metrics_success PASSED           [ 86%]
+tests/test_phase5_tools.py::test_product_metrics_success PASSED          [ 89%]
+tests/test_phase5_tools.py::test_get_opportunities_success PASSED        [ 91%]
+tests/test_phase5_tools.py::test_get_opportunities_category_filter PASSED [ 93%]
+tests/test_phase5_tools.py::test_get_opportunity_details_not_found PASSED [ 95%]
+tests/test_phase5_tools.py::test_compare_periods_success PASSED          [ 97%]
+tests/test_phase5_tools.py::test_all_tools_return_correct_tool_name PASSED [100%]
+
+============================== 46 passed in 3.01s ==============================

@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.1, pytest-9.1.1, pluggy-1.6.0 -- /workspaces/Merchant-Revenue-Growth-Agent/backend/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/Merchant-Revenue-Growth-Agent/backend
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collecting ... collected 18 items
+
+tests/test_phase6_agents.py::test_build_agent_output_has_all_keys PASSED [  5%]
+tests/test_phase6_agents.py::test_fallback_output_shape PASSED           [ 11%]
+tests/test_phase6_agents.py::test_insufficient_evidence_output_shape PASSED [ 16%]
+tests/test_phase6_agents.py::test_payment_recovery_agent_fallback PASSED [ 22%]
+tests/test_phase6_agents.py::test_checkout_recovery_agent_fallback PASSED [ 27%]
+tests/test_phase6_agents.py::test_winback_agent_fallback PASSED          [ 33%]
+tests/test_phase6_agents.py::test_subscription_retention_agent_fallback PASSED [ 38%]
+tests/test_phase6_agents.py::test_revenue_leakage_agent_fallback PASSED  [ 44%]
+tests/test_phase6_agents.py::test_product_growth_agent_fallback PASSED   [ 50%]
+tests/test_phase6_agents.py::test_payment_recovery_agent_with_db PASSED  [ 55%]
+tests/test_phase6_agents.py::test_checkout_recovery_agent_with_db PASSED [ 61%]
+tests/test_phase6_agents.py::test_winback_agent_with_db PASSED           [ 66%]
+tests/test_phase6_agents.py::test_subscription_retention_agent_with_db PASSED [ 72%]
+tests/test_phase6_agents.py::test_revenue_leakage_agent_with_db PASSED   [ 77%]
+tests/test_phase6_agents.py::test_product_growth_agent_with_db PASSED    [ 83%]
+tests/test_phase6_agents.py::test_payment_recovery_agent_impact_comes_from_tools PASSED [ 88%]
+tests/test_phase6_agents.py::test_all_agents_have_correct_opportunity_type PASSED [ 94%]
+tests/test_phase6_agents.py::test_all_agents_return_non_empty_summary PASSED [100%]
+
+============================== 18 passed in 1.14s ==============================

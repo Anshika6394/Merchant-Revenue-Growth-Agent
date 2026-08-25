@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.1, pytest-9.1.1, pluggy-1.6.0 -- /workspaces/Merchant-Revenue-Growth-Agent/backend/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/Merchant-Revenue-Growth-Agent/backend
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collecting ... collected 9 items
+
+tests/test_analytics.py::test_analytics_endpoints_require_authentication PASSED [ 11%]
+tests/test_analytics.py::test_revenue_metrics_are_database_derived PASSED [ 22%]
+tests/test_analytics.py::test_payments_include_configurable_recoverable_revenue PASSED [ 33%]
+tests/test_analytics.py::test_overview_checkout_customer_subscription_refund_and_trend_metrics PASSED [ 44%]
+tests/test_auth.py::test_registration_login_and_current_user PASSED      [ 55%]
+tests/test_auth.py::test_duplicate_email_is_rejected PASSED              [ 66%]
+tests/test_health.py::test_health_check PASSED                           [ 77%]
+tests/test_merchant_data.py::test_order_payment_refund_relationships PASSED [ 88%]
+tests/test_merchant_data.py::test_seed_is_deterministic_and_idempotent PASSED [100%]
+
+============================== 9 passed in 2.70s ===============================
