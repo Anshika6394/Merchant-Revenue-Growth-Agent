@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.routes import analytics, auth, health
+from app.api.routes import evidence, analytics, auth, health
 from app.core.config import get_settings
 
 settings = get_settings()
@@ -9,3 +9,5 @@ app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origin_list, allo
 app.include_router(health.router)
 app.include_router(auth.router, prefix="/api/v1")
 app.include_router(analytics.router, prefix="/api/v1")
+
+app.include_router(evidence.router)
