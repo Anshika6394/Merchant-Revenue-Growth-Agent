@@ -14,3 +14,6 @@ app.include_router(evidence.router)
 
 from app.api.routes import strategy
 app.include_router(strategy.router)
+
+from app.api.routes import rag
+app.include_router(rag.router)
