@@ -10,7 +10,7 @@ export default function Overview() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   useEffect(() => {
-    Promise.all([api.get("/api/v1/analytics/overview"), api.get("/api/v1/opportunities")])
+    Promise.all([api.get("/api/v1/analytics/overview"), api.get("/api/v1/opportunities/")])
       .then(([ov, op]) => { setData(ov.data); setOpps(op.data.slice(0, 3)); })
       .catch(() => setError("Failed to load data"))
       .finally(() => setLoading(false));

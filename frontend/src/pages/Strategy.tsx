@@ -49,13 +49,13 @@ export default function Strategy() {
           <div className="bg-gray-900 border border-green-800 rounded-xl p-5">
             <h3 className="text-green-400 font-semibold mb-2">Executive Summary</h3>
             <p className="text-white">{result.executive_summary}</p>
-            <p className="text-gray-400 text-sm mt-2">Total estimated impact: <span className="text-green-400 font-bold">{fmt(result.total_estimated_impact || 0)}</span></p>
+            <p className="text-gray-400 text-sm mt-2">Total estimated impact: <span className="text-green-400 font-bold">{fmt(parseFloat(result.total_estimated_impact) || 0)}</span></p>
           </div>
           {(result.top_opportunities || []).map((o: any, i: number) => (
             <div key={i} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
               <div className="flex justify-between items-start mb-2">
                 <span className="text-white font-medium">#{i+1} {o.opportunity_type?.replace(/_/g," ")}</span>
-                <span className="text-green-400 font-bold">{fmt(o.estimated_impact?.value || 0)}</span>
+                <span className="text-green-400 font-bold">{fmt(parseFloat(o.estimated_impact?.value) || 0)}</span>
               </div>
               <p className="text-gray-300 text-sm mb-2">{o.summary}</p>
               <p className="text-gray-400 text-sm"><span className="text-gray-500">Action: </span>{o.recommended_action}</p>

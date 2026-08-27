@@ -5,7 +5,7 @@ export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("admin@revpilot.ai");
-  const [password, setPassword] = useState("secret");
+  const [password, setPassword] = useState("admin123");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const handleSubmit = async () => {

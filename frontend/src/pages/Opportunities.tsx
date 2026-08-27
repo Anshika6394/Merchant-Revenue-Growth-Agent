@@ -6,10 +6,10 @@ export default function Opportunities() {
   const [opps, setOpps] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [detecting, setDetecting] = useState(false);
-  const load = () => api.get("/api/v1/opportunities").then(r => setOpps(r.data)).finally(() => setLoading(false));
+  const load = () => api.get("/api/v1/opportunities/").then(r => setOpps(r.data)).finally(() => setLoading(false));
   const detect = async () => {
     setDetecting(true);
-    await api.post("/api/v1/opportunities/detect");
+    await api.post("/api/v1/opportunities/detect/");
     await load();
     setDetecting(false);
   };

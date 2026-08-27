@@ -20,3 +20,6 @@ app.include_router(rag.router)
 
 from app.api.routes import actions
 app.include_router(actions.router)
+
+from app.api.routes import opportunities
+app.include_router(opportunities.router)
