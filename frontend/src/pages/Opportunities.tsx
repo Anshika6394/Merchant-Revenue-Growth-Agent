@@ -6,23 +6,36 @@ export default function Opportunities() {
   const [opps, setOpps] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [detecting, setDetecting] = useState(false);
+  const [detectMsg, setDetectMsg] = useState("");
   const load = () => api.get("/api/v1/opportunities/").then(r => setOpps(r.data)).finally(() => setLoading(false));
   const detect = async () => {
     setDetecting(true);
-    await api.post("/api/v1/opportunities/detect/");
-    await load();
-    setDetecting(false);
+    setDetectMsg("");
+    try {
+      await api.post("/api/v1/opportunities/detect");
+      await load();
+      setDetectMsg("Detection complete!");
+    } catch (e) {
+      setDetectMsg("Detection failed. Try again.");
+    } finally {
+      setDetecting(false);
+    }
   };
   useEffect(() => { load(); }, []);
   return (
     <Layout>
       <div className="flex justify-between items-center mb-6">
-        <div><h2 className="text-2xl font-bold text-white">Opportunities</h2>
-          <p className="text-gray-400 text-sm mt-1">Evidence-backed revenue opportunities</p></div>
-        <button onClick={detect} disabled={detecting}
-          className="bg-green-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded-lg transition text-sm">
-          {detecting ? "Detecting..." : "Run Detection"}
-        </button>
+        <div>
+          <h2 className="text-2xl font-bold text-white">Opportunities</h2>
+          <p className="text-gray-400 text-sm mt-1">Evidence-backed revenue opportunities</p>
+        </div>
+        <div className="flex items-center gap-3">
+          {detectMsg && <span className="text-sm text-green-400">{detectMsg}</span>}
+          <button onClick={detect} disabled={detecting}
+            className="bg-green-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded-lg transition text-sm">
+            {detecting ? "Detecting..." : "Run Detection"}
+          </button>
+        </div>
       </div>
       {loading ? <p className="text-gray-400">Loading...</p> : (
         <div className="space-y-3">

@@ -32,7 +32,7 @@ def detect_opportunities(db: Session) -> dict:
     results = []
     for agent in agents:
         try:
-            r = agent.run(db=db)
+            r = agent.analyze(db=db)
             if r:
                 results.append(r)
         except Exception as e:
