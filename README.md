@@ -42,6 +42,8 @@ ACTION SIMULATION (5 campaign types, feedback loop)
 REACT DASHBOARD (8 pages, JWT auth, real API data)
 ```
 
+Screenshot
+
 <img width="2880" height="1584" alt="image" src="https://github.com/user-attachments/assets/55e8f82f-cd07-4e73-902a-8c467ee339fe" />
 
 ---
