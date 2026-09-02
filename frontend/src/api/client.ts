@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BACKEND_URL = 'https://potential-memory-gxxr9x64679v297j5-8000.app.github.dev'
+const BACKEND_URL = 'https://merchant-revenue-growth-agent.onrender.com'
 
 const client = axios.create({
   baseURL: BACKEND_URL,
