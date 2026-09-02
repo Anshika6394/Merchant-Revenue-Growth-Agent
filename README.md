@@ -159,3 +159,9 @@ Phase 11: Hardening & Security
 - All financial numbers originate from **database analytics** — never fabricated by AI
 - All actions are **simulations** — no real payments executed
 - Clearly labeled: **DEMO / SYNTHETIC DATA / SIMULATION**
+
+## Live Demo
+- **Frontend:** https://potential-memory-gxxr9x64679v297j5-3000.app.github.dev
+- **Backend API:** https://potential-memory-gxxr9x64679v297j5-8000.app.github.dev/docs
+- **Login:** admin@revpilot.ai / admin123
+
